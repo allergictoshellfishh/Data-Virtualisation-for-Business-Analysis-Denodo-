@@ -1,9 +1,9 @@
 # Data Virtualisation  For Business Analysis Denodo-
-DVRT Assignment where I used a bike database data to create unified view for stock analysis.
 
-## Problem Statement
-The bike retail company maintains its operational data across multiple datasets, including orders, order items, products, stocks, staffs and more. Although each dataset is individually useful, the lack of integration results in fragmented information that limits insights about the company’s overall business performance. 
+This project applies data virtualisation techniques using Denodo to address a real-world retail problem: the lack of visibility into whether inventory levels across multiple stores align with actual customer demand.
 
-These inefficiencies can negatively affect customer satisfaction, as customers may not be able to purchase the products they want at their preferred store. Over time, this can lead to lost sales opportunities and reduced customer retention.
+Using multiple CSV datasets (orders, order items, products, categories, brands, stocks, and stores), I designed a layered virtual data model consisting of base views, integrated views, and an aggregation view. Sales demand, inventory levels, product attributes, brand context, and store information were progressively combined without physically moving data. Feature engineering was applied to derive meaningful business indicators such as stock gap and stock status, translating raw transactional data into actionable insights.
 
-**This assignment aims to help store managers and operations teams gain a unified, store-level, and near real-time view of customer demand and inventory distribution across retail outlets to ensure customer needs, improving customer satisfaction.** By integrating sales, inventory, and product category data using a data virtualization approach, the solution supports better inventory planning, improves product availability across stores, and ultimately enhances customer satisfaction and retention.
+The final report view provides a store-level, near real-time comparison of demand versus stock, allowing identification of overstocked, low-stock, and balanced products across locations. This directly supports better inventory planning, reduces inefficiencies caused by excess stock, and improves product availability where demand exists.
+
+To operationalise the solution, the final view was exposed as a REST API, enabling store-specific queries through simple HTTP requests. This demonstrates how virtualised analytical views can be reused by external systems and dashboards to support faster, data-driven decision-making.
